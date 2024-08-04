@@ -1,0 +1,88 @@
+package Driver;
+
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import base.BaseClass;
+import io.appium.java_client.AppiumBy;
+//import io.appium.java_client.AppiumDriver;
+//import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.android.nativekey.AndroidKey;
+//import io.appium.java_client.android.nativekey.KeyEvent;
+
+
+public class AndroidBackButton extends BaseClass {
+
+	public void tapBack() throws InterruptedException {
+		//        for(int i = 0; i < 3; i++) { 
+		//        	// Example: Press back button three times
+		//        	Thread.sleep(5000); 
+		//        	driver.navigate().back();
+		//        	System.out.println("Tapped "+(i+1)+"time");
+		//           // Adjust as needed
+		//           
+		//        }
+		try
+		{ 
+			WebElement element = driver.findElement(By.xpath("//android.widget.RelativeLayout[@content-desc=\"Activate to open step list\"]"
+					+ "/android.widget.RelativeLayout/android.widget.RelativeLayout"
+					+ "/android.widget.LinearLayout/android.widget.LinearLayout"));
+
+			// Assert that the element is displayed
+			Assert.assertTrue(element.isDisplayed(), "Validating whether the route in map is displaying.");
+			if(driver.findElement(AppiumBy.xpath("//android.widget.RelativeLayout[@content-desc=\"Activate to open step list\"]"
+					+ "/android.widget.RelativeLayout/android.widget.RelativeLayout"
+					+ "/android.widget.LinearLayout/android.widget.LinearLayout"))!=null)
+			{		
+				System.out.println("Route is displaying.");
+				driver.navigate().back();
+
+			}
+
+		} catch (NoSuchElementException e) {
+			// If the element is not found, fail the test
+			Assert.fail("Element is not found in the DOM.");
+		}
+		try
+		{ 
+			WebElement startNavigationScreen = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc=\"Start driving navigation\"]"));
+
+			// Assert that the element is displayed
+			Assert.assertTrue(startNavigationScreen.isDisplayed(), "Validating whether the start Navigation screen is displaying.");
+			if(driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc=\\\"Start driving navigation\\\"]"))!=null)
+			{		
+				System.out.println("Start Navigation screen is displaying.");
+				driver.navigate().back();
+			}
+
+		} catch (NoSuchElementException e) {
+			// If the element is not found, fail the test
+			Assert.fail("Element is not found in the DOM.");
+		}
+		try
+		{
+			WebElement gMapHomeScreen = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Search here\"]"));
+			Assert.assertTrue(gMapHomeScreen.isDisplayed(),"Validating whether the Gmap HomeScreen is displaying.");
+			if(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\\\"Search here\\\"]"))!=null) {
+				System.out.println("Gmap Home screen is displaying.");
+				driver.navigate().back();
+			}
+			
+		}
+		catch(NoSuchElementException e) {
+			
+		}
+
+
+
+	}}
+
+
+
+
+
+
+

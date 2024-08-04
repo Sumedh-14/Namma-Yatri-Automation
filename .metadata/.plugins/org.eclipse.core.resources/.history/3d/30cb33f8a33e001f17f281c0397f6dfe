@@ -1,0 +1,75 @@
+package TestSuite;
+
+import org.testng.annotations.Test;
+
+import Driver.AndroidBackButton;
+import Driver.DriverLoginFlow;
+import Driver.EndRideScreen;
+import Driver.EnterOTPPopUp;
+import Driver.PopUpScreen;
+import Driver.StartRideScreen;
+import User.Android.EstimateScreen;
+import User.Android.OTPScreen;
+import User.Android.RideSearch;
+import User.Android.UserLoginFlow;
+import User.Android.UserRatingScreen;
+import base.BaseClass;
+
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+
+public class Android extends BaseClass {
+
+    @Test
+    public void sanityrideFlow() throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(2);
+        CyclicBarrier barrier = new CyclicBarrier(2);
+
+        Thread driverThread = new Thread(() -> {
+            try {
+                new DriverLoginFlow().successfulDriverLogin();
+                barrier.await(); // 1st barrier: Wait for user login flow to complete
+                barrier.await(); // 2nd barrier: Wait for user ride search and auto-assign driver to complete
+                new PopUpScreen().acceptOffer();
+                barrier.await(); // 3rd barrier: Wait for user to read OTP
+                new StartRideScreen().startRide();
+                new EnterOTPPopUp().enterCorrectOTP();
+                new AndroidBackButton().tapBack();
+                new EndRideScreen().clickEndRide();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            } finally {
+                latch.countDown();
+            }
+        });
+
+        // Run user login flow in a separate thread
+        Thread userThread = new Thread(() -> {
+            try {
+                new UserLoginFlow().successfulUserLogin();
+                barrier.await(); // 1st barrier: Wait for driver login flow to complete
+                new RideSearch().SearchForRideFromSuggestion();
+                new EstimateScreen().autoAssignDriver();
+                barrier.await(); // 2nd barrier: Wait for driver to reach the 2nd barrier
+                new OTPScreen().readOTP();
+                barrier.await(); // 3rd barrier: Wait for driver to accept the offer
+                new UserRatingScreen().ratingScreen();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            } finally {
+                latch.countDown();
+            }
+        });
+        
+     
+
+        // Start both threads
+        driverThread.start();
+        userThread.start();
+   
+
+        // Wait for both threads to finish
+        latch.await();
+    }
+}

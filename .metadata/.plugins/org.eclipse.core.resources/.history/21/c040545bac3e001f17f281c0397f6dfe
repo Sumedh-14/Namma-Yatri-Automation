@@ -1,0 +1,79 @@
+package Main;
+
+import org.testng.TestNG;
+import java.util.Scanner;
+
+public class TestingFlowInputOptions {
+
+    public static void main(String[] args) {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Select the device from the below options for user Application");
+        int userDevice = userInput.nextInt();
+        System.out.println("Select the device from the below options for driver Application\n1.Samsung A51\n2.Iqoo Z5\n3.Realme RMX2117"
+        		+ "\n4.Vivo Y21\\n5.Google Pixel 6a");
+        int driverDevice = userInput.nextInt();
+
+        // Validate and set device configurations
+        setDeviceConfiguration(userDevice, driverDevice);
+
+        // Run TestNG tests
+        TestNG testng = new TestNG();
+        testng.setTestClasses(new Class[]{TestSuite.Android.class});
+        testng.run();
+    }
+    public void deviceNames() {
+    	System.out.println("\n1.Samsung A51\n2.Iqoo Z5\n3.Realme RMX2117"
+        		+ "\n4.Vivo Y21\n5.Google Pixel 6a);
+    }
+
+    private static void setDeviceConfiguration(int userDevice, int driverDevice) {
+        switch (userDevice) {
+            case 1:
+                System.setProperty("userDeviceName", "Samsung A51");
+                System.setProperty("userUdid", "RZ8N91FWYXT");
+                break;
+            case 2:
+                System.setProperty("userDeviceName", "Iqoo Z5");
+                System.setProperty("userUdid", "1371785921000CT");
+                break;
+            case 3:
+            	System.setProperty("driverDeviceName", "Realme RMX2117");
+            	System.setProperty("driverUdid", "SONJFMDUKV65OJV4");
+            	break;
+            case 4:
+            	System.setProperty("driverDeviceName", "Vivo Y21");
+            	System.setProperty("driverUdid", "1377682723004YR");
+            	break;
+            case 5:
+            	System.setProperty("driverDeviceName","Google Pixel 6a");
+            	System.setProperty("driverUdid", "28301JEGR03129");
+            default:
+                throw new IllegalArgumentException("Invalid user device selection.");
+        }
+
+        switch (driverDevice) {
+            case 1:
+                System.setProperty("driverDeviceName", "Samsung A51");
+                System.setProperty("driverUdid", "RZ8N91FWYXT");
+                break;
+            case 2:
+                System.setProperty("driverDeviceName", "Iqoo Z5");
+                System.setProperty("driverUdid", "1371785921000CT");
+                break;
+            case 3:
+            	System.setProperty("driverDeviceName", "Realme RMX2117");
+            	System.setProperty("driverUdid", "SONJFMDUKV65OJV4");
+            	break;
+            case 4:
+            	System.setProperty("driverDeviceName", "Vivo Y21");
+            	System.setProperty("driverUdid", "1377682723004YR");
+            	break;
+            case 5:
+            	System.setProperty("driverDeviceName","Google Pixel 6a");
+            	System.setProperty("driverUdid", "28301JEGR03129");
+            	break;
+            default:
+                throw new IllegalArgumentException("Invalid driver device selection.");
+        }
+    }
+}

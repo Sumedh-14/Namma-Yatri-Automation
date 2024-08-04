@@ -1,0 +1,89 @@
+package User.Android;
+
+import io.appium.java_client.AppiumBy;
+import base.BaseClass;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class UserLoginFlow extends BaseClass {
+    String userUdid = System.getProperty("userUdid");
+
+    public void successfulUserLogin() throws InterruptedException {
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Get Started']")).click();
+        Thread.sleep(2000);
+        decliningTheAutoSuggestions();
+        System.out.println("None is tapped");
+        driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Mobile number']")).sendKeys("8808908811");
+        Thread.sleep(2000);
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
+        Thread.sleep(2000);
+        driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter 4 digit OTP']")).sendKeys("7891");
+        Thread.sleep(3000);
+
+        // Checking for the "Full Name" element with a custom timeout
+        if (isElementPresentWithTimeout(AppiumBy.xpath("//android.widget.TextView[@text='Full Name']"), 5000)) {
+            register();
+        }
+
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Allow Location Access']")).click();
+        Thread.sleep(6000);
+        selectingLocationPermission();
+    }
+
+    public void register() throws InterruptedException {
+        driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Name']")).sendKeys("Automation Testing");
+        Thread.sleep(2000);
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Select Your Gender']")).click();
+        Thread.sleep(2000);
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Male']")).click();
+        Thread.sleep(2000);
+        driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Let’s go!']")).click();
+        Thread.sleep(3000);
+    }
+
+    public void decliningTheAutoSuggestions() throws InterruptedException {
+        System.out.println("Coming to this block");
+        System.out.println("driverUdid: " + driverUdid); // Debug statement to log the driverUdid value
+        if ("1371785921000CT".equals(driverUdid)) {
+            System.out.println("Trying to tap 'NONE OF THE ABOVE'");
+            // Checking for the "NONE OF THE ABOVE" button with a custom timeout
+            if (isElementPresentWithTimeout(AppiumBy.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']"), 5000)) {
+                try {
+                    driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']")).click();
+                    System.out.println("Tapped 'NONE OF THE ABOVE'");
+                } catch (NoSuchElementException e) {
+                    System.out.println("Element 'NONE OF THE ABOVE' was found but not interactable");
+                }
+            } else {
+                System.out.println("'NONE OF THE ABOVE' button not found within timeout");
+            }
+        } else {
+            System.out.println("driverUdid does not match '1371785921000CT'");
+        }
+        Thread.sleep(1000);
+    }
+
+    public void selectingLocationPermission() throws InterruptedException {
+        if ("1371785921000CT".equals(userUdid)) {
+            driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();
+            Thread.sleep(1000);
+            driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
+            Thread.sleep(1000);
+        }
+    }
+
+    public boolean isElementPresentWithTimeout(By by, int timeout) {
+        try {
+        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.presenceOfElementLocated(by));
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+}

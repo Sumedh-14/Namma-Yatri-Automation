@@ -1,0 +1,73 @@
+package base;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+
+public class BaseClass {
+    protected static AppiumDriver driver; 
+    protected static AppiumDriver driver1;
+    public static String rideOTP = null;
+
+    @BeforeTest
+    public void setUp() throws MalformedURLException {
+        try {
+            String driverDeviceName = System.getProperty("driverDeviceName");
+            String driverUdid = System.getProperty("driverUdid");
+            String userDeviceName = System.getProperty("userDeviceName");
+            String userUdid = System.getProperty("userUdid");
+
+            URL url = new URL("http://0.0.0.0:4723/wd/hub/");
+
+            // Driver
+            DesiredCapabilities cap = new DesiredCapabilities();
+            cap.setCapability("platformName", "Android");
+            cap.setCapability("platformVersion", "13");
+            cap.setCapability("deviceName", driverDeviceName);
+            cap.setCapability("udid", driverUdid);
+            cap.setCapability("automationName", "UiAutomator2");
+            cap.setCapability("app", "/path/to/driver/app.apk");
+            driver = new AppiumDriver(url, cap);
+            driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+
+            // User
+            DesiredCapabilities cap1 = new DesiredCapabilities();
+            cap1.setCapability("platformName", "Android");
+            cap1.setCapability("platformVersion", "13");
+            cap1.setCapability("deviceName", userDeviceName);
+            cap1.setCapability("udid", userUdid);
+            cap1.setCapability("automationName", "UiAutomator2");
+            cap1.setCapability("app", "/path/to/user/app.apk");
+            driver1 = new AppiumDriver(url, cap1);
+            driver1.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        } catch (Exception exp) {
+            System.out.println("Cause is: " + exp.getCause());
+            System.out.println("Message is: " + exp.getMessage());
+            exp.printStackTrace();
+        }
+    }
+
+    public void scrollToText(String text) {
+        driver.findElement(
+            new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0))"
+                + ".scrollIntoView(new UiSelector()" + ".textMatches(\"" + text + "\").instance(0))"));
+    }
+
+    @AfterTest
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+        if (driver1 != null) {
+            driver1.quit();
+        }
+    }
+}

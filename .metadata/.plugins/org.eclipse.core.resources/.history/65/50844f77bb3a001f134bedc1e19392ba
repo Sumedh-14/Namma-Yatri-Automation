@@ -1,0 +1,21 @@
+package Driver;
+
+import java.time.Duration;
+
+
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import base.BaseClass;
+
+public class AndroidBackButton extends BaseClass {
+
+    public void swipeBack() {
+        // Get the size of the screen
+    	driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+
+    }
+}
+
+
+
+

@@ -1,0 +1,8 @@
+package User.Android;
+
+public class UserRatingScreen {
+	public void ratingScreen() {
+		
+	}
+
+}

@@ -1,0 +1,74 @@
+package Driver;
+
+import base.BaseClass;
+import io.appium.java_client.AppiumBy;
+
+public class DevicePermissions extends BaseClass {
+
+    public void handlePermissions() throws InterruptedException {
+        String driverUdid = System.getProperty("driverUdid");
+        System.out.println("Setting Up the permissions");
+
+        if ("RZ8N91FWYXT".equals(driverUdid)) {
+            permissionsForSamsungA51();
+        } else if ("1371785921000CT".equals(driverUdid)) {
+            permissionsForIqooZ5();
+        }
+    }
+
+    private void permissionsForSamsungA51() throws InterruptedException {
+    	
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Auto Reading OTP...']")).sendKeys("7891");
+        Thread.sleep(5000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Draw over applications']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
+        Thread.sleep(4000);
+        driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Autostart in background']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Battery Optimization']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
+        Thread.sleep(2000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
+        Thread.sleep(4000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Check Now']")).click();
+        Thread.sleep(2000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Home']")).click();
+        Thread.sleep(5000);
+    }
+
+    private void permissionsForIqooZ5() throws InterruptedException {
+
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Auto Reading OTP...']")).sendKeys("7891");
+        Thread.sleep(5000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Draw over applications']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Namma Yatri Partner']")).click();
+        Thread.sleep(4000);
+        driver.findElement(AppiumBy.xpath("//android.widget.ImageButton[@content-desc='Navigate up']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Autostart in background']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Battery Optimization']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Notification Access']")).click();
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='Allow']")).click();
+        Thread.sleep(2000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Continue']")).click();
+        Thread.sleep(4000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Check Now']")).click();
+        Thread.sleep(2000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Home']")).click();
+        Thread.sleep(5000);
+    }
+}

@@ -1,0 +1,11 @@
+package User.Android;
+
+import base.BaseClass;
+import io.appium.java_client.AppiumBy;
+
+public class UserRatingScreen extends BaseClass{
+	public void ratingScreen() {
+		driver1.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"5star : Selected \"]"));
+	}
+
+}

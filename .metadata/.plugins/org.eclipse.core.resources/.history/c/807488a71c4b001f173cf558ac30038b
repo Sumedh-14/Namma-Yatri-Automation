@@ -1,0 +1,36 @@
+package User.Android;
+
+import base.BaseClass;
+import io.appium.java_client.AppiumBy;
+
+public class UserDevicePermissions extends BaseClass{
+	String userUdid = System.getProperty("userUdid");
+
+
+	public void decliningTheAutoSuggestions() throws InterruptedException{
+		System.out.println("Coming to this block");
+		if("1371785921000CT".equals(userUdid)) {
+			System.out.println("Trying to tap none");
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']")).click(); 
+		}
+		else if("SONJFMDUKV65OJV4".equals(userUdid)) {
+			System.out.println("Trying to tap none");
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']")).click(); 
+		}
+
+		Thread.sleep(1000); 
+	}
+	public void selectingLocationPermission() throws InterruptedException{
+		if("1371785921000CT".equals(userUdid)) {
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();
+			Thread.sleep(1000);
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='ALLOW']")).click();
+			Thread.sleep(1000);
+		}
+		else if("SONJFMDUKV65OJV4".equals(userUdid)) {
+			System.out.println("Trying to tap none");
+			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='While using the app']")).click(); 
+		}
+	}
+
+}

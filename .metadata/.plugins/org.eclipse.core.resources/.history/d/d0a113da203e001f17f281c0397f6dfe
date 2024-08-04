@@ -1,0 +1,8 @@
+package Driver;
+
+import base.BaseClass;
+
+public class DevicePermissions extends BaseClass{
+	
+
+}

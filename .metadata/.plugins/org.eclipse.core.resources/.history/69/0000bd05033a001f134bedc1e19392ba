@@ -1,0 +1,66 @@
+package TestSuite;
+
+import org.testng.annotations.Test;
+import Driver.DriverLoginFlow;
+import Driver.PopUpScreen;
+import User.Android.EstimateScreen;
+import User.Android.OTPScreen;
+import User.Android.RideSearch;
+import User.Android.UserLoginFlow;
+import base.BaseClass;
+
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+
+public class Android extends BaseClass {
+
+    @Test
+    public void sanityrideFlow() throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(2);
+        CyclicBarrier barrier = new CyclicBarrier(2);
+
+        // Run driver login flow in a separate thread
+        Thread driverThread = new Thread(() -> {
+            try {
+                new DriverLoginFlow().successfulDriverLogin();
+                barrier.await();
+              //  new PopUpScreen().waitForRideRequestPopup();
+        		new PopUpScreen().acceptOffer();
+        		barrier.await();
+        		new StartRideScreen().startRide();
+               // new SwitchModes().driverMode();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            } finally {
+                latch.countDown();
+            }
+        });
+
+        // Run user login flow in a separate thread
+       Thread userThread = new Thread(() -> {
+            try {
+                new UserLoginFlow().successfulUserLogin();
+                new RideSearch().SearchForRideFromSuggestion();
+                new EstimateScreen().autoAssignDriver();
+                barrier.await();
+                new OTPScreen().readOTP();
+                barrier.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            } finally {
+                latch.countDown();
+            }
+        });
+        
+     
+
+        // Start both threads
+        driverThread.start();
+        userThread.start();
+   
+
+        // Wait for both threads to finish
+        latch.await();
+    }
+}

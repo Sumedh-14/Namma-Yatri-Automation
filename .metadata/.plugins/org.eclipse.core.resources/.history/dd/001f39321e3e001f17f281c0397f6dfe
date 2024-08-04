@@ -1,0 +1,19 @@
+package Main;
+
+import java.util.Scanner;
+
+public class TestingFlowInputOptions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int driverDevice, userDevice;
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Select the device from the below options for user Application\n1.Samsung A51\n2.Iqoo Z5");
+		driverDevice = userInput.nextInt();
+		System.out.println("Select the device from the below options for driver Application\n1.Samsung A51\n2.Iqoo Z5");
+		userDevice = userInput.nextInt();
+		
+
+	}
+
+}

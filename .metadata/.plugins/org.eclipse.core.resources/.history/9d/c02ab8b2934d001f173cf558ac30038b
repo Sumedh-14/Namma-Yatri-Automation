@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+  <!-- First Test to set properties -->
+  <test name="SetupFlowOption">
+   <parameter name="flow" value="1"/>
+    <classes>
+      <class name="base.BaseClass">
+      <include name = "prerequisite"/>
+      <include name = "setUp"/>>
+      </class>
+    </classes>
+  </test>
+
+  <!-- Second Test depends on the properties being set -->
+  <test name="UserLoginFlow">
+    <classes>
+      <class name="User.Android.UserLoginFlow" />
+    </classes>
+  </test>
+</suite>

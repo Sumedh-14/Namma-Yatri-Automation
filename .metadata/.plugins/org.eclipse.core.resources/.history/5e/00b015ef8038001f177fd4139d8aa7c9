@@ -1,0 +1,11 @@
+package Driver;
+
+import base.BaseClass;
+
+public class SwitchModes extends BaseClass{
+	
+public void silentMode()
+{
+	
+}
+}

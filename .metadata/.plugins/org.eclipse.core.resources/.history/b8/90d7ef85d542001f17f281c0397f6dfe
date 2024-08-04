@@ -1,0 +1,80 @@
+package User.Android;
+
+import io.appium.java_client.AppiumBy;
+import base.BaseClass;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class UserLoginFlow extends BaseClass {
+    String driverUdid = System.getProperty("driverUdid");
+    WebDriverWait wait;
+
+    public UserLoginFlow() {
+        wait = new WebDriverWait(driver1, 30); // 30 seconds timeout
+    }
+
+    public void successfulUserLogin() throws InterruptedException {
+        // User
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Get Started']"))).click();
+        decliningTheAutoSuggestions();
+        System.out.println("None is tapped");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='Enter Mobile number']"))).sendKeys("8808908811");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Continue']"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='Enter 4 digit OTP']"))).sendKeys("7891");
+
+        if (isElementPresent(By.xpath("//android.widget.TextView[@text='Full Name']"))) {
+            register();
+        }
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Allow Location Access']"))).click();
+        selectingLocationPermission();
+    }
+
+    public void register() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='Enter Your Name']"))).sendKeys("Automation Testing");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Select Your Gender']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Male']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Let’s go!']"))).click();
+    }
+
+    public void decliningTheAutoSuggestions() {
+        System.out.println("Coming to this block");
+        if ("1371785921000CT".equals(driverUdid)) {
+            System.out.println("Trying to tap none");
+            try {
+                WebElement noneButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']")));
+                noneButton.click();
+            } catch (NoSuchElementException e) {
+                System.out.println("Element 'NONE OF THE ABOVE' not found");
+            }
+        }
+    }
+
+    public void selectingLocationPermission() {
+        if ("1371785921000CT".equals(driverUdid)) {
+            try {
+                WebElement whileUsingButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='WHILE USING THE APP']")));
+                whileUsingButton.click();
+                WebElement allowButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='ALLOW']")));
+                allowButton.click();
+            } catch (NoSuchElementException e) {
+                System.out.println("Element 'WHILE USING THE APP' or 'ALLOW' not found");
+            }
+        }
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(by));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}

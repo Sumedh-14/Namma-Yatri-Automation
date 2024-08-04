@@ -1,0 +1,66 @@
+package Driver;
+
+import base.BaseClass;
+import io.appium.java_client.AppiumBy;
+
+
+public class EnterOTPPopUp extends BaseClass {
+	
+	//try for right/wrong otp and various edge cases
+	
+	public void enterCorrectOTP() throws InterruptedException {
+		
+		System.out.println("Ride OTP is transferred to Driver to Start Ride = "+rideOTP);
+
+        char[] otp = rideOTP.toCharArray();
+
+        for(int i=0;i<4;i++) {
+
+            for(int j=0;j<=9;j++) {
+
+                if(Integer.parseInt(String.valueOf(otp[i]))==j) {
+
+                    switch(j) {
+
+					case 0: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='0']")).click();
+					break;
+					case 1: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='1']")).click();
+					break;
+					case 2: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='2']")).click();
+					break;
+					case 3: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='3']")).click();
+					break;
+					case 4: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='4']")).click();
+					break;
+					case 5: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='5']")).click();
+					break;
+					case 6: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='6']")).click();
+					break;
+					case 7: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='7']")).click();
+					break;
+					case 8: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='8']")).click();
+					break;
+					case 9: driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='9']")).click();
+					break;
+                    }
+                }
+            }
+        }
+////android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout
+        Thread.sleep(3000);
+		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='0']/../../following-sibling::android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ImageView")).click();
+		System.out.println("Driver entered the right otp");
+		Thread.sleep(3000);
+	}
+	
+	public void clickBackAfterEnteringOTP() {
+		
+		
+	}
+	
+	public void enterWrongOTP() {
+		
+		
+	}
+
+}
