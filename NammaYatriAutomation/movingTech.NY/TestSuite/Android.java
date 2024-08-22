@@ -7,7 +7,8 @@ import Driver.EndRideScreen;
 import Driver.EnterOTPPopUp;
 import Driver.PopUpScreen;
 import Driver.StartRideScreen;
-import Driver.driverRatingScreen;
+import Driver.DriverCancellation;
+import Driver.DriverRatingScreen;
 import User.Android.EstimateScreen;
 import User.Android.OTPScreen;
 import User.Android.RideSearch;
@@ -38,13 +39,14 @@ public class Android extends BaseClass {
                 new PopUpScreen().acceptOffer();
                 barrier.await(); // 3rd barrier: Wait for user to read OTP
                 System.out.println("Driver thread passed third barrier");
+           //     new DriverCancellation().cancelRide();
                 new StartRideScreen().startRide();
                 new EnterOTPPopUp().enterCorrectOTP();
                 new AndroidBackButton().tapBack();
                 new EndRideScreen().clickEndRide();
                 barrier.await(); // 4th barrier
                 System.out.println("Driver thread passed fourth barrier");
-                new driverRatingScreen().ratingScreen();
+                new DriverRatingScreen().ratingScreen();
                 barrier.await(); // 5th barrier
                 System.out.println("Driver thread passed fifth barrier");
             } catch (InterruptedException | BrokenBarrierException e) {
@@ -69,6 +71,7 @@ public class Android extends BaseClass {
                 new OTPScreen().readOTP();
                 barrier.await(); // 3rd barrier: Wait for driver to accept the offer
                 System.out.println("User thread passed third barrier");
+                
                 barrier.await(); // 4th barrier
                 System.out.println("User thread passed fourth barrier");
                 new UserRatingScreen().ratingScreen();

@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import base.BaseClass;
 
@@ -34,6 +35,7 @@ public class OTPScreen extends BaseClass {
 		
 		//using assertions
 	}
+	@Test
 	public void readOTP() {
         // XPath to locate the TextView with the text "OTP"
         String xpath = "//android.widget.TextView[@text='OTP']";

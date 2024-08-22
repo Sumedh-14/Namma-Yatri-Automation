@@ -1,12 +1,15 @@
 package User.Android;
 
 import io.appium.java_client.AppiumBy;
+
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 
 public class EstimateScreen extends BaseClass {
 	
 	//we can write to choose from preferences
-	
+	@Test
 	public void autoAssignDriver() throws InterruptedException {
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Auto']")).click();
 		Thread.sleep(2000);

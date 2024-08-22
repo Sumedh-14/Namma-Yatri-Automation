@@ -1,10 +1,12 @@
 package User.Android;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
 public class UserRatingScreen extends BaseClass {
-
+    @Test
     public void ratingScreen() throws InterruptedException {
         System.out.println("Entering UserRatingScreen method");
         try {

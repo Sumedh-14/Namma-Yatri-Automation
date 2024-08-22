@@ -8,11 +8,39 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">249,742</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">DriverLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">71,978</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">UserLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">32,063</td><td></td><td></td></tr>
+<tr><td><a href="#t2">RideSearch and Getting Estimates</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,809</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Accepting the RideRequest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11,128</td><td></td><td></td></tr>
+<tr><td><a href="#t4">Reading OTP from OTP screen</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">32,372</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t5">Starting the Ride</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">48,663</td><td></td><td></td></tr>
+<tr><td><a href="#t6">Ending the Ride</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">26,339</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t7">User Giving Rating</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">21,033</td><td></td><td></td></tr>
+<tr><td><a href="#t8">Driver Giving Rating</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">6,269</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">12</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">278,654</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestSuite.Android</td><td><a href="#m0">sanityrideFlow</a></td><td rowspan="1">1722260130727</td><td rowspan="1">211886</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DriverLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.DriverLoginFlow</td><td><a href="#m0">successfulDriverLogin</a></td><td rowspan="1">1724336698253</td><td rowspan="1">71883</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">UserLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.UserLoginFlow</td><td><a href="#m1">successfulUserLogin</a></td><td rowspan="1">1724336775222</td><td rowspan="1">32059</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">RideSearch and Getting Estimates &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.EstimateScreen</td><td><a href="#m2">autoAssignDriver</a></td><td rowspan="1">1724336828254</td><td rowspan="1">12843</td></tr><tr class="passedodd"><td rowspan="1">User.Android.RideSearch</td><td><a href="#m3">SearchForRideFromSuggestion</a></td><td rowspan="1">1724336812296</td><td rowspan="1">15955</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Accepting the RideRequest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.PopUpScreen</td><td><a href="#m4">acceptOffer</a></td><td rowspan="1">1724336846111</td><td rowspan="1">11124</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">Reading OTP from OTP screen &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.OTPScreen</td><td><a href="#m5">readOTP</a></td><td rowspan="1">1724336862260</td><td rowspan="1">32365</td></tr></tbody>
+<tbody id="t5"><tr><th colspan="4">Starting the Ride &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.AndroidBackButton</td><td><a href="#m6">tapBack</a></td><td rowspan="1">1724336915359</td><td rowspan="1">32936</td></tr><tr class="passedodd"><td rowspan="1">Driver.EnterOTPPopUp</td><td><a href="#m7">enterCorrectOTP</a></td><td rowspan="1">1724336905400</td><td rowspan="1">9958</td></tr><tr class="passedeven"><td rowspan="1">Driver.StartRideScreen</td><td><a href="#m8">startRide</a></td><td rowspan="1">1724336899634</td><td rowspan="1">5764</td></tr></tbody>
+<tbody id="t6"><tr><th colspan="4">Ending the Ride &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.EndRideScreen</td><td><a href="#m9">clickEndRide</a></td><td rowspan="1">1724336953306</td><td rowspan="1">26337</td></tr></tbody>
+<tbody id="t7"><tr><th colspan="4">User Giving Rating &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.UserRatingScreen</td><td><a href="#m10">ratingScreen</a></td><td rowspan="1">1724336984657</td><td rowspan="1">21030</td></tr></tbody>
+<tbody id="t8"><tr><th colspan="4">Driver Giving Rating &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.DriverRatingScreen</td><td><a href="#m11">ratingScreen</a></td><td rowspan="1">1724337010705</td><td rowspan="1">6267</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">TestSuite.Android#sanityrideFlow</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>DriverLogin</h2><h3 id="m0">Driver.DriverLoginFlow#successfulDriverLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>UserLogin</h2><h3 id="m1">User.Android.UserLoginFlow#successfulUserLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>RideSearch and Getting Estimates</h2><h3 id="m2">User.Android.EstimateScreen#autoAssignDriver</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">User.Android.RideSearch#SearchForRideFromSuggestion</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Accepting the RideRequest</h2><h3 id="m4">Driver.PopUpScreen#acceptOffer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Reading OTP from OTP screen</h2><h3 id="m5">User.Android.OTPScreen#readOTP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Starting the Ride</h2><h3 id="m6">Driver.AndroidBackButton#tapBack</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">Driver.EnterOTPPopUp#enterCorrectOTP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">Driver.StartRideScreen#startRide</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Ending the Ride</h2><h3 id="m9">Driver.EndRideScreen#clickEndRide</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Giving Rating</h2><h3 id="m10">User.Android.UserRatingScreen#ratingScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Driver Giving Rating</h2><h3 id="m11">Driver.DriverRatingScreen#ratingScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

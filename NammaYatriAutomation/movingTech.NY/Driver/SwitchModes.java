@@ -1,10 +1,13 @@
 package Driver;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
 public class SwitchModes extends BaseClass{
 	
+@Test
 public void driverMode() throws InterruptedException
 {
 	Thread.sleep(9000);

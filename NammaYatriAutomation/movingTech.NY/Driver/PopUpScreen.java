@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
@@ -20,6 +21,7 @@ public class PopUpScreen extends BaseClass {
     }
 
     // Method to accept the ride request
+    @Test
     public void acceptOffer() throws InterruptedException {
         Thread.sleep(2000);
         System.out.println("Waiting to accept the request");

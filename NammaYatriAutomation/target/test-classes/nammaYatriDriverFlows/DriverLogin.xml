@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="flowOption" value="2"></parameter>
+	<test name="DriverLogin">
+		<classes>
+			<class name="Driver.DriverLoginFlow">
+				<methods>
+					<include name="successfulDriverLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="SwitchingModes">
+		<classes>
+			<class name="Driver.SwitchModes">
+				<methods>
+					<include name="driverMode" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!--
+Suite -->
+

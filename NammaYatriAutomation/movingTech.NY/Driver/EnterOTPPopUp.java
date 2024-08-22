@@ -1,5 +1,7 @@
 package Driver;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
@@ -7,7 +9,7 @@ import io.appium.java_client.AppiumBy;
 public class EnterOTPPopUp extends BaseClass {
 	
 	//try for right/wrong otp and various edge cases
-	
+	@Test
 	public void enterCorrectOTP() throws InterruptedException {
 		
 		System.out.println("Ride OTP is transferred to Driver to Start Ride = "+rideOTP);

@@ -1,5 +1,7 @@
 package Driver;
 
+import org.testng.annotations.Test;
+
 import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 
@@ -8,7 +10,7 @@ public class EndRideScreen extends BaseClass {
 	//about opening maps
 	//about end ride/Go back
 	//read ridefare and ride distance and assert with value received at estimate screen/ at start ride screen/ with screen from user side
-	
+	@Test
 	public void clickEndRide() throws InterruptedException {
 		System.out.println("Coming to tap on the EndRide");
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='End Ride']")).click();
@@ -18,9 +20,6 @@ public class EndRideScreen extends BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Fare Collected\"]")).click();
 		Thread.sleep(2000);
-		driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"5 Star : Un Selected\"]")).click();
-		Thread.sleep(2000);
-		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Submit Feedback\"]")).click();
 	}
 	
 	public void clickMaps() {
