@@ -1,2 +1,0 @@
-NammaYatriAutomation/movingTech.NY/Resources/app-nyDriver-prod-debug.apk filter=lfs diff=lfs merge=lfs -text
-NammaYatriAutomation/movingTech.NY/Resources/app-nyUser-prod-debug.apk filter=lfs diff=lfs merge=lfs -text
