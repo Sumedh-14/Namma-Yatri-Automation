@@ -8,39 +8,46 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">DriverLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">71,978</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">UserLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">32,063</td><td></td><td></td></tr>
-<tr><td><a href="#t2">RideSearch and Getting Estimates</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,809</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t3">Accepting the RideRequest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11,128</td><td></td><td></td></tr>
-<tr><td><a href="#t4">Reading OTP from OTP screen</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">32,372</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t5">Starting the Ride</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">48,663</td><td></td><td></td></tr>
-<tr><td><a href="#t6">Ending the Ride</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">26,339</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t7">User Giving Rating</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">21,033</td><td></td><td></td></tr>
-<tr><td><a href="#t8">Driver Giving Rating</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">6,269</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">12</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">278,654</th><th colspan="2"></th></tr>
+<tr><th colspan="8">RentalUserCancellation</th></tr>
+<tr><td><a href="#t0">DriverLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">90,911</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">UserLogin</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">58,905</td><td></td><td></td></tr>
+<tr><td><a href="#t2">Searching for the Rental Ride</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">16,339</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">Confirming the Quotes</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">47,764</td><td></td><td></td></tr>
+<tr><td><a href="#t4">Accepting the RideRequest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,131</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t5">Cancelling the RentalRide</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">195,562</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">5</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">437,612</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DriverLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.DriverLoginFlow</td><td><a href="#m0">successfulDriverLogin</a></td><td rowspan="1">1724336698253</td><td rowspan="1">71883</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">UserLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.UserLoginFlow</td><td><a href="#m1">successfulUserLogin</a></td><td rowspan="1">1724336775222</td><td rowspan="1">32059</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">RideSearch and Getting Estimates &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.EstimateScreen</td><td><a href="#m2">autoAssignDriver</a></td><td rowspan="1">1724336828254</td><td rowspan="1">12843</td></tr><tr class="passedodd"><td rowspan="1">User.Android.RideSearch</td><td><a href="#m3">SearchForRideFromSuggestion</a></td><td rowspan="1">1724336812296</td><td rowspan="1">15955</td></tr></tbody>
-<tbody id="t3"><tr><th colspan="4">Accepting the RideRequest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.PopUpScreen</td><td><a href="#m4">acceptOffer</a></td><td rowspan="1">1724336846111</td><td rowspan="1">11124</td></tr></tbody>
-<tbody id="t4"><tr><th colspan="4">Reading OTP from OTP screen &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.OTPScreen</td><td><a href="#m5">readOTP</a></td><td rowspan="1">1724336862260</td><td rowspan="1">32365</td></tr></tbody>
-<tbody id="t5"><tr><th colspan="4">Starting the Ride &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.AndroidBackButton</td><td><a href="#m6">tapBack</a></td><td rowspan="1">1724336915359</td><td rowspan="1">32936</td></tr><tr class="passedodd"><td rowspan="1">Driver.EnterOTPPopUp</td><td><a href="#m7">enterCorrectOTP</a></td><td rowspan="1">1724336905400</td><td rowspan="1">9958</td></tr><tr class="passedeven"><td rowspan="1">Driver.StartRideScreen</td><td><a href="#m8">startRide</a></td><td rowspan="1">1724336899634</td><td rowspan="1">5764</td></tr></tbody>
-<tbody id="t6"><tr><th colspan="4">Ending the Ride &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.EndRideScreen</td><td><a href="#m9">clickEndRide</a></td><td rowspan="1">1724336953306</td><td rowspan="1">26337</td></tr></tbody>
-<tbody id="t7"><tr><th colspan="4">User Giving Rating &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.UserRatingScreen</td><td><a href="#m10">ratingScreen</a></td><td rowspan="1">1724336984657</td><td rowspan="1">21030</td></tr></tbody>
-<tbody id="t8"><tr><th colspan="4">Driver Giving Rating &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.DriverRatingScreen</td><td><a href="#m11">ratingScreen</a></td><td rowspan="1">1724337010705</td><td rowspan="1">6267</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">RentalUserCancellation</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DriverLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.DriverLoginFlow</td><td><a href="#m0">successfulDriverLogin</a></td><td rowspan="1">1724515269144</td><td rowspan="1">90883</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">UserLogin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.UserLoginFlow</td><td><a href="#m1">successfulUserLogin</a></td><td rowspan="1">1724515365088</td><td rowspan="1">58902</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">Searching for the Rental Ride &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.RentalRideSearch</td><td><a href="#m2">rideSearchWithoutAddingStop</a></td><td rowspan="1">1724515429004</td><td rowspan="1">16338</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">Confirming the Quotes &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">User.Android.QuotesScreen</td><td><a href="#m3">selectingAutoQuote</a></td><td rowspan="1">1724515450348</td><td rowspan="1">47760</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">Accepting the RideRequest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Driver.PopUpScreen</td><td><a href="#m4">acceptOffer</a></td><td rowspan="1">1724515503124</td><td rowspan="1">28129</td></tr></tbody>
+<tbody id="t5"><tr><th colspan="4">Cancelling the RentalRide &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">User.Android.RentalUserCancellation</td><td><a href="#m5">rentalUserCancellation</a></td><td rowspan="1">1724515536263</td><td rowspan="1">195559</td></tr></tbody>
 </table>
 <h2>DriverLogin</h2><h3 id="m0">Driver.DriverLoginFlow#successfulDriverLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h2>UserLogin</h2><h3 id="m1">User.Android.UserLoginFlow#successfulUserLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>RideSearch and Getting Estimates</h2><h3 id="m2">User.Android.EstimateScreen#autoAssignDriver</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">User.Android.RideSearch#SearchForRideFromSuggestion</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Searching for the Rental Ride</h2><h3 id="m2">User.Android.RentalRideSearch#rideSearchWithoutAddingStop</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Confirming the Quotes</h2><h3 id="m3">User.Android.QuotesScreen#selectingAutoQuote</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.widget.TextView[@text=&apos;Auto&apos;]&apos; does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.5&apos;, java.version: &apos;22.0.1&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [08180672-d8a2-4f9b-81f0-915cb9f32a7c, clickElement {id=00000000-0000-0acc-ffff-ffff0000046b}]
+Capabilities {appium:app: /Users/sumedh.kp/Downloads/..., appium:appPackage: in.juspay.nammayatri.debug, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sumedh.kp/Downloads/..., automationName: UiAutomator2, deviceName: Iqoo Z5, newCommandTimeout: 300, platformName: ANDROID, platformVersion: 13, udid: 1371785921000CT}, appium:deviceApiLevel: 33, appium:deviceManufacturer: vivo, appium:deviceModel: I2018, appium:deviceName: 1371785921000CT, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: 1371785921000CT, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 300, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 99, appium:takesScreenshot: true, appium:udid: 1371785921000CT, appium:viewportRect: {height: 2094, left: 0, top: 99, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (08180672-d8a2-4f9b-81f0-915cb9f32a7c)] -&gt; xpath: //android.widget.TextView[@text=&apos;Auto&apos;]]
+Session ID: 08180672-d8a2-4f9b-81f0-915cb9f32a7c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at User.Android.QuotesScreen.selectingAutoQuote(QuotesScreen.java:12)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h2>Accepting the RideRequest</h2><h3 id="m4">Driver.PopUpScreen#acceptOffer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Reading OTP from OTP screen</h2><h3 id="m5">User.Android.OTPScreen#readOTP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Starting the Ride</h2><h3 id="m6">Driver.AndroidBackButton#tapBack</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">Driver.EnterOTPPopUp#enterCorrectOTP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">Driver.StartRideScreen#startRide</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Ending the Ride</h2><h3 id="m9">Driver.EndRideScreen#clickEndRide</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>User Giving Rating</h2><h3 id="m10">User.Android.UserRatingScreen#ratingScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Driver Giving Rating</h2><h3 id="m11">Driver.DriverRatingScreen#ratingScreen</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Cancelling the RentalRide</h2><h3 id="m5">User.Android.RentalUserCancellation#rentalUserCancellation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

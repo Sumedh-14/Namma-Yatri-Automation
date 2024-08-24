@@ -44,6 +44,8 @@ public class DevicePermissions extends BaseClass {
 		Thread.sleep(2000);
 		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Home']")).click();
 		Thread.sleep(5000);
+		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='GO!']")).click();
+		Thread.sleep(2000);
 		System.out.println("Permissions are setted Up successfully");
 	}
 

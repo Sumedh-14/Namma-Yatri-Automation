@@ -12,7 +12,7 @@ import base.BaseClass;
 
 public class UserLoginFlow extends BaseClass{
 	String userUdid;
-	
+
 	@Test
 	public void successfulUserLogin() throws InterruptedException {
 
@@ -39,9 +39,8 @@ public class UserLoginFlow extends BaseClass{
 
 	}
 
-	public void register() throws InterruptedException 
-
-	{
+	public void register() throws InterruptedException {
+		
 		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Name']")).sendKeys("Automation Testing");
 		Thread.sleep(2000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Select Your Gender']")).click();
@@ -53,9 +52,8 @@ public class UserLoginFlow extends BaseClass{
 
 	}
 
-	public void decliningTheAutoSuggestions() throws InterruptedException{
-		System.out.println("Coming inside the Declining Block");
-		System.out.println(userUdid);
+	public void decliningTheAutoSuggestions() throws InterruptedException {
+		
 		if("1371785921000CT".equals(userUdid)) {
 			System.out.println("Trying to tap none");
 			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='NONE OF THE ABOVE']")).click(); 
@@ -75,8 +73,9 @@ public class UserLoginFlow extends BaseClass{
 		System.out.println("Executed the Declining Block");
 		Thread.sleep(1000); 
 	}
-	
-	public void selectingLocationPermission() throws InterruptedException{
+
+	public void selectingLocationPermission() throws InterruptedException {
+		
 		System.out.println("Coming inside the Selecting permission block");
 		if("1371785921000CT".equals(userUdid)) {
 			driver1.findElement(AppiumBy.xpath("//android.widget.Button[@text='WHILE USING THE APP']")).click();

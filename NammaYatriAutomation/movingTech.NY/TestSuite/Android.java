@@ -64,7 +64,7 @@ public class Android extends BaseClass {
                 new UserLoginFlow().successfulUserLogin();
                 barrier.await(); // 1st barrier: Wait for driver login flow to complete
                 System.out.println("User thread passed first barrier");
-                new RideSearch().SearchForRideFromSuggestion();
+                new RideSearch().searchForRideFromSuggestion();
                 new EstimateScreen().autoAssignDriver();
                 barrier.await(); // 2nd barrier: Wait for driver to reach the 2nd barrier
                 System.out.println("User thread passed second barrier");

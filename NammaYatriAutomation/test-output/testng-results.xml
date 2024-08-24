@@ -1,95 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="18" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-22T19:54:58 IST" name="Suite" finished-at="2024-08-22T20:00:16 IST" duration-ms="318804">
+  <suite started-at="2024-08-24T21:31:09 IST" name="RentalUserCancellation" finished-at="2024-08-24T21:38:51 IST" duration-ms="462700">
     <groups>
     </groups>
-    <test started-at="2024-08-22T19:54:58 IST" name="DriverLogin" finished-at="2024-08-22T19:56:10 IST" duration-ms="71978">
+    <test started-at="2024-08-24T21:31:09 IST" name="DriverLogin" finished-at="2024-08-24T21:32:40 IST" duration-ms="90911">
       <class name="Driver.DriverLoginFlow">
-        <test-method signature="successfulDriverLogin()[pri:0, instance:Driver.DriverLoginFlow@44ebcd03]" started-at="2024-08-22T19:54:58 IST" name="successfulDriverLogin" finished-at="2024-08-22T19:56:10 IST" duration-ms="71883" status="PASS">
+        <test-method signature="successfulDriverLogin()[pri:0, instance:Driver.DriverLoginFlow@4f18837a]" started-at="2024-08-24T21:31:09 IST" name="successfulDriverLogin" finished-at="2024-08-24T21:32:40 IST" duration-ms="90883" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfulDriverLogin -->
       </class> <!-- Driver.DriverLoginFlow -->
     </test> <!-- DriverLogin -->
-    <test started-at="2024-08-22T19:56:15 IST" name="UserLogin" finished-at="2024-08-22T19:56:47 IST" duration-ms="32063">
+    <test started-at="2024-08-24T21:32:45 IST" name="UserLogin" finished-at="2024-08-24T21:33:43 IST" duration-ms="58905">
       <class name="User.Android.UserLoginFlow">
-        <test-method signature="successfulUserLogin()[pri:0, instance:User.Android.UserLoginFlow@2b662a77]" started-at="2024-08-22T19:56:15 IST" name="successfulUserLogin" finished-at="2024-08-22T19:56:47 IST" duration-ms="32059" status="PASS">
+        <test-method signature="successfulUserLogin()[pri:0, instance:User.Android.UserLoginFlow@4550bb58]" started-at="2024-08-24T21:32:45 IST" name="successfulUserLogin" finished-at="2024-08-24T21:33:43 IST" duration-ms="58902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfulUserLogin -->
       </class> <!-- User.Android.UserLoginFlow -->
     </test> <!-- UserLogin -->
-    <test started-at="2024-08-22T19:56:52 IST" name="RideSearch and Getting Estimates" finished-at="2024-08-22T19:57:21 IST" duration-ms="28809">
-      <class name="User.Android.RideSearch">
-        <test-method signature="SearchForRideFromSuggestion()[pri:0, instance:User.Android.RideSearch@1b7cc17c]" started-at="2024-08-22T19:56:52 IST" name="SearchForRideFromSuggestion" finished-at="2024-08-22T19:57:08 IST" duration-ms="15955" status="PASS">
+    <test started-at="2024-08-24T21:33:49 IST" name="Searching for the Rental Ride" finished-at="2024-08-24T21:34:05 IST" duration-ms="16339">
+      <class name="User.Android.RentalRideSearch">
+        <test-method signature="rideSearchWithoutAddingStop()[pri:0, instance:User.Android.RentalRideSearch@4efbca5a]" started-at="2024-08-24T21:33:49 IST" name="rideSearchWithoutAddingStop" finished-at="2024-08-24T21:34:05 IST" duration-ms="16338" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchForRideFromSuggestion -->
-      </class> <!-- User.Android.RideSearch -->
-      <class name="User.Android.EstimateScreen">
-        <test-method signature="autoAssignDriver()[pri:0, instance:User.Android.EstimateScreen@59662a0b]" started-at="2024-08-22T19:57:08 IST" name="autoAssignDriver" finished-at="2024-08-22T19:57:21 IST" duration-ms="12843" status="PASS">
+        </test-method> <!-- rideSearchWithoutAddingStop -->
+      </class> <!-- User.Android.RentalRideSearch -->
+    </test> <!-- Searching for the Rental Ride -->
+    <test started-at="2024-08-24T21:34:10 IST" name="Confirming the Quotes" finished-at="2024-08-24T21:34:58 IST" duration-ms="47764">
+      <class name="User.Android.QuotesScreen">
+        <test-method signature="selectingAutoQuote()[pri:0, instance:User.Android.QuotesScreen@72967906]" started-at="2024-08-24T21:34:10 IST" name="selectingAutoQuote" finished-at="2024-08-24T21:34:58 IST" duration-ms="47760" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[The element 'By.xpath: //android.widget.TextView[@text='Auto']' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.5', java.version: '22.0.1'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [08180672-d8a2-4f9b-81f0-915cb9f32a7c, clickElement {id=00000000-0000-0acc-ffff-ffff0000046b}]
+Capabilities {appium:app: /Users/sumedh.kp/Downloads/..., appium:appPackage: in.juspay.nammayatri.debug, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sumedh.kp/Downloads/..., automationName: UiAutomator2, deviceName: Iqoo Z5, newCommandTimeout: 300, platformName: ANDROID, platformVersion: 13, udid: 1371785921000CT}, appium:deviceApiLevel: 33, appium:deviceManufacturer: vivo, appium:deviceModel: I2018, appium:deviceName: 1371785921000CT, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: 1371785921000CT, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 300, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 99, appium:takesScreenshot: true, appium:udid: 1371785921000CT, appium:viewportRect: {height: 2094, left: 0, top: 99, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (08180672-d8a2-4f9b-81f0-915cb9f32a7c)] -> xpath: //android.widget.TextView[@text='Auto']]
+Session ID: 08180672-d8a2-4f9b-81f0-915cb9f32a7c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: The element 'By.xpath: //android.widget.TextView[@text='Auto']' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.5', java.version: '22.0.1'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [08180672-d8a2-4f9b-81f0-915cb9f32a7c, clickElement {id=00000000-0000-0acc-ffff-ffff0000046b}]
+Capabilities {appium:app: /Users/sumedh.kp/Downloads/..., appium:appPackage: in.juspay.nammayatri.debug, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sumedh.kp/Downloads/..., automationName: UiAutomator2, deviceName: Iqoo Z5, newCommandTimeout: 300, platformName: ANDROID, platformVersion: 13, udid: 1371785921000CT}, appium:deviceApiLevel: 33, appium:deviceManufacturer: vivo, appium:deviceModel: I2018, appium:deviceName: 1371785921000CT, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: 1371785921000CT, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 300, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 99, appium:takesScreenshot: true, appium:udid: 1371785921000CT, appium:viewportRect: {height: 2094, left: 0, top: 99, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (08180672-d8a2-4f9b-81f0-915cb9f32a7c)] -> xpath: //android.widget.TextView[@text='Auto']]
+Session ID: 08180672-d8a2-4f9b-81f0-915cb9f32a7c
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at User.Android.QuotesScreen.selectingAutoQuote(QuotesScreen.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- autoAssignDriver -->
-      </class> <!-- User.Android.EstimateScreen -->
-    </test> <!-- RideSearch and Getting Estimates -->
-    <test started-at="2024-08-22T19:57:26 IST" name="Accepting the RideRequest" finished-at="2024-08-22T19:57:37 IST" duration-ms="11128">
+        </test-method> <!-- selectingAutoQuote -->
+      </class> <!-- User.Android.QuotesScreen -->
+    </test> <!-- Confirming the Quotes -->
+    <test started-at="2024-08-24T21:35:03 IST" name="Accepting the RideRequest" finished-at="2024-08-24T21:35:31 IST" duration-ms="28131">
       <class name="Driver.PopUpScreen">
-        <test-method signature="acceptOffer()[pri:0, instance:Driver.PopUpScreen@42a48628]" started-at="2024-08-22T19:57:26 IST" name="acceptOffer" finished-at="2024-08-22T19:57:37 IST" duration-ms="11124" status="PASS">
+        <test-method signature="acceptOffer()[pri:0, instance:Driver.PopUpScreen@6aeb35e6]" started-at="2024-08-24T21:35:03 IST" name="acceptOffer" finished-at="2024-08-24T21:35:31 IST" duration-ms="28129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- acceptOffer -->
       </class> <!-- Driver.PopUpScreen -->
     </test> <!-- Accepting the RideRequest -->
-    <test started-at="2024-08-22T19:57:42 IST" name="Reading OTP from OTP screen" finished-at="2024-08-22T19:58:14 IST" duration-ms="32372">
-      <class name="User.Android.OTPScreen">
-        <test-method signature="readOTP()[pri:0, instance:User.Android.OTPScreen@351d00c0]" started-at="2024-08-22T19:57:42 IST" name="readOTP" finished-at="2024-08-22T19:58:14 IST" duration-ms="32365" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- readOTP -->
-      </class> <!-- User.Android.OTPScreen -->
-    </test> <!-- Reading OTP from OTP screen -->
-    <test started-at="2024-08-22T19:58:19 IST" name="Starting the Ride" finished-at="2024-08-22T19:59:08 IST" duration-ms="48663">
-      <class name="Driver.StartRideScreen">
-        <test-method signature="startRide()[pri:0, instance:Driver.StartRideScreen@5c6648b0]" started-at="2024-08-22T19:58:19 IST" name="startRide" finished-at="2024-08-22T19:58:25 IST" duration-ms="5764" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startRide -->
-      </class> <!-- Driver.StartRideScreen -->
-      <class name="Driver.EnterOTPPopUp">
-        <test-method signature="enterCorrectOTP()[pri:0, instance:Driver.EnterOTPPopUp@6f1de4c7]" started-at="2024-08-22T19:58:25 IST" name="enterCorrectOTP" finished-at="2024-08-22T19:58:35 IST" duration-ms="9958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- enterCorrectOTP -->
-      </class> <!-- Driver.EnterOTPPopUp -->
-      <class name="Driver.AndroidBackButton">
-        <test-method signature="tapBack()[pri:0, instance:Driver.AndroidBackButton@459e9125]" started-at="2024-08-22T19:58:35 IST" name="tapBack" finished-at="2024-08-22T19:59:08 IST" duration-ms="32936" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tapBack -->
-      </class> <!-- Driver.AndroidBackButton -->
-    </test> <!-- Starting the Ride -->
-    <test started-at="2024-08-22T19:59:13 IST" name="Ending the Ride" finished-at="2024-08-22T19:59:39 IST" duration-ms="26339">
-      <class name="Driver.EndRideScreen">
-        <test-method signature="clickEndRide()[pri:0, instance:Driver.EndRideScreen@48f2bd5b]" started-at="2024-08-22T19:59:13 IST" name="clickEndRide" finished-at="2024-08-22T19:59:39 IST" duration-ms="26337" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickEndRide -->
-      </class> <!-- Driver.EndRideScreen -->
-    </test> <!-- Ending the Ride -->
-    <test started-at="2024-08-22T19:59:44 IST" name="User Giving Rating" finished-at="2024-08-22T20:00:05 IST" duration-ms="21033">
-      <class name="User.Android.UserRatingScreen">
-        <test-method signature="ratingScreen()[pri:0, instance:User.Android.UserRatingScreen@3270d194]" started-at="2024-08-22T19:59:44 IST" name="ratingScreen" finished-at="2024-08-22T20:00:05 IST" duration-ms="21030" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ratingScreen -->
-      </class> <!-- User.Android.UserRatingScreen -->
-    </test> <!-- User Giving Rating -->
-    <test started-at="2024-08-22T20:00:10 IST" name="Driver Giving Rating" finished-at="2024-08-22T20:00:16 IST" duration-ms="6269">
-      <class name="Driver.DriverRatingScreen">
-        <test-method is-config="true" signature="setUp(int)[pri:0, instance:Driver.DriverRatingScreen@77888435]" started-at="2024-08-22T19:54:17 IST" name="setUp" finished-at="2024-08-22T19:54:58 IST" duration-ms="40427" status="PASS">
+    <test started-at="2024-08-24T21:35:36 IST" name="Cancelling the RentalRide" finished-at="2024-08-24T21:38:51 IST" duration-ms="195562">
+      <class name="User.Android.RentalUserCancellation">
+        <test-method is-config="true" signature="setUp(int)[pri:0, instance:User.Android.RentalUserCancellation@409bf450]" started-at="2024-08-24T21:30:29 IST" name="setUp" finished-at="2024-08-24T21:31:09 IST" duration-ms="39180" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -100,15 +121,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ratingScreen()[pri:0, instance:Driver.DriverRatingScreen@77888435]" started-at="2024-08-22T20:00:10 IST" name="ratingScreen" finished-at="2024-08-22T20:00:16 IST" duration-ms="6267" status="PASS">
+        <test-method signature="rentalUserCancellation()[pri:0, instance:User.Android.RentalUserCancellation@409bf450]" started-at="2024-08-24T21:35:36 IST" name="rentalUserCancellation" finished-at="2024-08-24T21:38:51 IST" duration-ms="195559" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ratingScreen -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Driver.DriverRatingScreen@77888435]" started-at="2024-08-22T20:00:21 IST" name="tearDown" finished-at="2024-08-22T20:00:23 IST" duration-ms="1432" status="PASS">
+        </test-method> <!-- rentalUserCancellation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:User.Android.RentalUserCancellation@409bf450]" started-at="2024-08-24T21:38:56 IST" name="tearDown" finished-at="2024-08-24T21:38:57 IST" duration-ms="1102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Driver.DriverRatingScreen -->
-    </test> <!-- Driver Giving Rating -->
-  </suite> <!-- Suite -->
+      </class> <!-- User.Android.RentalUserCancellation -->
+    </test> <!-- Cancelling the RentalRide -->
+  </suite> <!-- RentalUserCancellation -->
 </testng-results>
