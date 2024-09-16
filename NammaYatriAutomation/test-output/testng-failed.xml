@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [RentalUserCancellation]" guice-stage="DEVELOPMENT">
-  <parameter name="flowOption" value="3"/>
-  <test thread-count="5" name="Confirming the Quotes(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="flowOption" value="1"/>
+  <test thread-count="5" name="UserLogin(failed)">
     <classes>
-      <class name="User.Android.QuotesScreen">
+      <class name="User.Android.UserLoginFlow">
         <methods>
+          <include name="successfulUserLogin"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="selectingAutoQuote"/>
         </methods>
-      </class> <!-- User.Android.QuotesScreen -->
+      </class> <!-- User.Android.UserLoginFlow -->
     </classes>
-  </test> <!-- Confirming the Quotes(failed) -->
-</suite> <!-- Failed suite [RentalUserCancellation] -->
+  </test> <!-- UserLogin(failed) -->
+</suite> <!-- Failed suite [Suite] -->

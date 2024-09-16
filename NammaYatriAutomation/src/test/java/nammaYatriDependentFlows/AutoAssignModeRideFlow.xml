@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Normal Ride Flow">
     <parameter name="flowOption" value="3"></parameter>
     
     <!-- DriverLogin -->
@@ -63,9 +63,6 @@
 
     <!-- Reading OTP from OTP screen -->
     <test name="Reading OTP from OTP screen" >
-        <groups>
-            <define name="readOTP" />
-        </groups>
         <classes>
             <class name="User.Android.OTPScreen">
                 <methods>

@@ -27,11 +27,6 @@ public class UserLoginFlow extends BaseClass{
 		Thread.sleep(2000);
 		driver1.findElement(AppiumBy.xpath("//android.widget.EditText[@text='Enter 4 digit OTP']")).sendKeys("7891");
 		Thread.sleep(3000);
-		//		if(driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Full Name']"))!= null)
-		//		{
-		//		register();
-		//		}
-		Thread.sleep(2000);
 		System.out.println("Selecting the location");
 		driver1.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Allow Location Access']")).click();
 		Thread.sleep(6000);

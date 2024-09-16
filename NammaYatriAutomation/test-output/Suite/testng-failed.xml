@@ -1,78 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="flowOption" value="3"/>
-  <test thread-count="2" parallel="tests" name="RideSearch and Getting Estimates(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="flowOption" value="1"/>
+  <test thread-count="5" name="UserLogin(failed)">
     <classes>
-      <class name="User.Android.EstimateScreen">
+      <class name="User.Android.UserLoginFlow">
         <methods>
+          <include name="successfulUserLogin"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="autoAssignDriver"/>
         </methods>
-      </class> <!-- User.Android.EstimateScreen -->
+      </class> <!-- User.Android.UserLoginFlow -->
     </classes>
-  </test> <!-- RideSearch and Getting Estimates(failed) -->
-  <test thread-count="2" parallel="tests" name="Accepting the RideRequest(failed)">
-    <classes>
-      <class name="Driver.PopUpScreen">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="acceptOffer"/>
-        </methods>
-      </class> <!-- Driver.PopUpScreen -->
-    </classes>
-  </test> <!-- Accepting the RideRequest(failed) -->
-  <test thread-count="2" parallel="tests" name="Reading OTP from OTP screen(failed)">
-    <classes>
-      <class name="User.Android.OTPScreen">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="readOTP"/>
-        </methods>
-      </class> <!-- User.Android.OTPScreen -->
-    </classes>
-  </test> <!-- Reading OTP from OTP screen(failed) -->
-  <test thread-count="2" parallel="tests" name="Ending the Ride(failed)">
-    <classes>
-      <class name="Driver.EndRideScreen">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="clickEndRide"/>
-        </methods>
-      </class> <!-- Driver.EndRideScreen -->
-    </classes>
-  </test> <!-- Ending the Ride(failed) -->
-  <test thread-count="2" parallel="tests" name="Driver Giving Rating(failed)">
-    <classes>
-      <class name="Driver.DriverRatingScreen">
-        <methods>
-          <include name="ratingScreen"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- Driver.DriverRatingScreen -->
-    </classes>
-  </test> <!-- Driver Giving Rating(failed) -->
-  <test thread-count="2" parallel="tests" name="Starting the Ride(failed)">
-    <classes>
-      <class name="Driver.EnterOTPPopUp">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="enterCorrectOTP"/>
-        </methods>
-      </class> <!-- Driver.EnterOTPPopUp -->
-      <class name="Driver.StartRideScreen">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="startRide"/>
-        </methods>
-      </class> <!-- Driver.StartRideScreen -->
-    </classes>
-  </test> <!-- Starting the Ride(failed) -->
+  </test> <!-- UserLogin(failed) -->
 </suite> <!-- Failed suite [Suite] -->
